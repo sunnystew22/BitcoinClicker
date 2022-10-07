@@ -1,0 +1,71 @@
+Let's make a game!
+	desc:Mine Bitcoin and get rich!
+	updated:7/10/2022
+	name:Bitcoin Clicker
+	version:1.0
+	created:7/10/2022
+	by:Sunnystew
+
+Settings
+	building cost increase:105%
+	background:https://imgur.com/iwXgp9a
+	stylesheet:stuff/bigBlue.css
+	building cost refund:105%
+	spritesheet:icons, 48 by 48, https://imgur.com/n4UZDgZ
+	spritesheet:gpuicons, 48 by 48, https://imgur.com/6IGMhs1
+
+css
+  #game
+  {
+	background:https://imgur.com/iwXgp9a;
+	font-family:"Times New Roman",Times,serif;
+	color:black;
+  }
+#game.filtersOn .thing.cantAfford.notOwned
+  {
+	filter:blur(5px);
+  }
+
+  Buttons
+    *MineBitcoin  
+	  name:Mine Bitcoin
+	  desc:Click to mine Bitcoin
+	  on click:yield 0.1 Bitcoin
+	  class:bigButton
+	  show clicks
+	  icon:https://imgur.com/d4VqT7K
+	  no text
+
+	Resources
+	*Bitcoin
+	  name:Bitcoin
+	  desc:The currency the game uses.
+
+Buildings
+  *CheapGPU
+    name:Cheap GPU
+	desc: A cheap GPU to mine a little bit of Bitcoin.
+	on tick:yield 0.2 Bitcoin
+	cost:1 Bitcoin
+	icon:gpuicons[0,0]
+
+  *BudgetGPU
+    name:Budget GPU
+    desc: A budget GPU to mine more Bitcoin.
+	on tick:yield 0.4 Bitcoin
+	cost:10 Bitcoin
+	icon:gpuicons[0,1]
+
+  *MidrangeGPU
+    name:Mid-range GPU
+    desc: A mid-range GPU to mine even more Bitcoin.
+	on tick:yield 0.8 Bitcoin
+	cost:100 Bitcoin
+	icon:gpuicons[1,0]
+
+  *ExpensiveGPU
+    name:Expensive GPU
+    desc: An expensive GPU to mine YET EVEN MORE Bitcoin.
+	on tick:yield 100 Bitcoin
+	cost:1000 Bitcoin
+	icon:gpuicons[1,1]
